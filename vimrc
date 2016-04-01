@@ -102,9 +102,8 @@ set laststatus=2
 
 " vim-airline
 let g:airline_theme='solarized'
-let g:airline_left_sep='›'  " Slightly fancier than '>'
-let g:airline_right_sep='‹' " Slightly fancier than '<'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " =========== Key (re)mapping
 
@@ -344,6 +343,10 @@ set nofoldenable "dont fold by default
 " Enable jsx formatting in .js files
 let g:jsx_ext_required = 0
 
+" =========== Deoplete
+
+let g:deoplete#enable_at_startup = 1
+
 " =========== Formatting and other tricks
 
 " select xml text to format
@@ -419,18 +422,3 @@ endfunction
     "set term=builtin_ansi       " Make arrow and other keys work
   endif
 
-" =========== Misc
-
-" Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
-
-" Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction

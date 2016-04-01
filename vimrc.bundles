@@ -35,6 +35,8 @@ Plugin 'ervandew/supertab'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'tpope/vim-sensible'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
