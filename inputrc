@@ -1,0 +1,6 @@
+"\e[1;9D": backward-word
+"\e[1;9C": forward-word
+
+# set editing-mode vi
+# set keymap vi
+set expand-tilde on

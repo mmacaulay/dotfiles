@@ -1,0 +1,5 @@
+if [ "$PS1" -a -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+source ~/.bash/completion_scripts/git_completion
