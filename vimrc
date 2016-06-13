@@ -336,7 +336,7 @@ set nofoldenable "dont fold by default
 " =========== Linters
 
 " standard
-" let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_javascript_checkers = ['standard']
 " autocmd bufwritepost *.js silent !standard % --format
 " set autoread
 
