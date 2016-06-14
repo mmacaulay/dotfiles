@@ -12,6 +12,7 @@ source ~/.vimrc.bundles
 
 " =========== General
 
+let g:python_host_prog='/usr/local/bin/python'
 set nocompatible
 set background=dark
 set cursorline
