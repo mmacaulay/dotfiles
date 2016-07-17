@@ -348,6 +348,15 @@ let g:jsx_ext_required = 0
 
 let g:deoplete#enable_at_startup = 1
 
+" let g:deoplete#omni#functions.javascript = [
+"       \   'jspc#omni',
+"       \   'tern#Complete',
+"       \ ]
+
+" =========== javascript-libraries-syntax
+
+let g:used_javascript_libs = 'underscore,react,chai'
+
 " =========== Formatting and other tricks
 
 " select xml text to format
