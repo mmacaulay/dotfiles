@@ -19,14 +19,9 @@ shopt -s histappend
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
-# Helps prvent sbt ~test from crashing with PermGen errors
-export SBT_OPTS="-XX:MaxPermSize=378M -Djava.library.path=/usr/local/lib"
-
 export RBENV_ROOT=/usr/local/var/rbenv
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-export BYOBU_PREFIX=$(brew --prefix)
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
