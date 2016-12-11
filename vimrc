@@ -1,6 +1,33 @@
 " Matt's .vimrc
 
-source ~/.vimrc.bundles
+" **********************
+" Plugs
+" **********************
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'rking/ag.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/syntastic'
+Plug 'jeetsukumaran/vim-buffergator', { 'on': 'BuffergatorToggle' }
+Plug 'jbaum98/vim-colors-solarized'
+Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'gcmt/wildfire.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Raimondi/delimitMate'
+
+# Language support
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+
+call plug#end()
 
 " **********************
 " General
