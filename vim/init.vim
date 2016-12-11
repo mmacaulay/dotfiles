@@ -1,1 +1,1 @@
-/Users/mattmacaulay/.vimrc
+/Users/mattmacaulay/dev/dotfiles/vimrc
