@@ -23,9 +23,10 @@ Plug 'gcmt/wildfire.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Raimondi/delimitMate'
 
-# Language support
+" Language support
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'elzr/vim-json', { 'for': ['json'] }
 
 call plug#end()
 
