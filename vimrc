@@ -6,7 +6,6 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
@@ -127,6 +126,13 @@ nmap <silent> <leader>h :set invhlsearch<CR>
 " Map <Leader>ff to display all lines with keyword under cursor
 " and ask which one to jump to
 nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+
+" **********************
+" Neovim specific settings
+" **********************
+
+set termguicolors
+:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " **********************
 " GUI settings

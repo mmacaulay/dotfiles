@@ -1,6 +1,9 @@
 #!/bin/bash
 
-for file in bash vim bash_profile bashrc gitconfig gitignore inputrc vimrc vimrc.bundles
+for file in bash vim bash_profile bashrc gitconfig gitignore inputrc vimrc
 do
   ln -s "$PWD/$file" "$HOME/.$file"
 done
+
+mkdir -p ~/.config
+ln -s ~/.vim ~/.config/nvim
