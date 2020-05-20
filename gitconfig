@@ -1,19 +1,27 @@
 [user]
-  name = Matt MacAulay
-  email = mac@twg.io
+	name = Matt MacAulay
+	email = mac@twg.io
 [color]
   diff = auto
   status = auto
   branch = auto
 [core]
-  excludesfile = /Users/mattmacaulay/.gitignore
-  editor = vim
+	excludesfile = /Users/mac/.gitignore
+  editor = nvim
   autocrlf = input
 [apply]
   whitespace = nowarn
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [push]
   default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/mac/.stCommitMsg

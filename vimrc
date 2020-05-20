@@ -14,7 +14,7 @@ Plug 'tpope/vim-commentary'
 Plug 'scrooloose/syntastic'
 Plug 'jeetsukumaran/vim-buffergator', { 'on': 'BuffergatorToggle' }
 Plug 'jbaum98/vim-colors-solarized'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'nathanaelkane/vim-indent-guides'
@@ -25,7 +25,7 @@ Plug 'Raimondi/delimitMate'
 " Language support
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'elzr/vim-json', { 'for': ['json'] }
+"Plug 'elzr/vim-json', { 'for': ['json'] }
 
 call plug#end()
 
@@ -188,7 +188,7 @@ autocmd BufReadPost *
 
 " =========== NERDTree
 
-map <C-e> <plug>NERDTreeTabsToggle<CR>
+map <leader>n <plug>NERDTreeTabsToggle<CR>
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
