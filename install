@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in bash vim bash_profile bashrc gitconfig gitignore inputrc vimrc
+for file in bash vim zshrc gitconfig gitignore inputrc vimrc
 do
   ln -s "$PWD/$file" "$HOME/.$file"
 done
