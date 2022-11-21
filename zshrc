@@ -22,8 +22,8 @@ SAVEHIST=5000
 HISTSIZE=2000
 
 # Suggest corrections to commands
-setopt CORRECT
-setopt CORRECT_ALL
+unsetopt CORRECT
+unsetopt CORRECT_ALL
 
 ### Autocomplete
 autoload -Uz compinit && compinit
@@ -32,19 +32,51 @@ autoload -Uz compinit && compinit
 autoload bashcompinit && bashcompinit
 
 ### Prompt
-PROMPT='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f %F{yellow}%(!.#.%#)%f '
+
+# source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
+
+PS1='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f %F{yellow}%(!.#.%#)%f '
+#PS1='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f $(git_super_status) %F{yellow}%(!.#.%#)%f '
+
+### Git status prompt disabled because vcs_info stopped working for some reason
+
+#zstyle ':vcs_info:*' disable bzr cdv darcs mtn svk tla cvs svn
+#zstyle ':vcs_info:*' enable git
+#zstyle ':vcs_info:git:*' check-for-changes true
+
+#zstyle ':vcs_info:git:*' unstagedstr "*"
+#zstyle ':vcs_info:git:*' stagedstr "+"
+#zstyle ':vcs_info:git:*' formats '(%b%m%u%c) '
+
+#precmd() {
+#    vcs_info
+
+#    if [[ -z ${vcs_info_msg_0_} ]]; then
+#	vcs_msg=''
+#    else
+#	vcs_msg="${vcs_info_msg_0_}"
+#    fi
+
+#    PS1='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f $vcs_msg%F{yellow}%(!.#.%#)%f '
+#    echo -ne "\e]1;`print -P %~`\a"
+#}
 
 ### Aliases
 
 # I always install gnu coreutils
-alias ls='ls --color -F -a -b -T 0'
+#alias ls='ls --color -F -a -b -T 0'
+#alias ls='gls'
+alias ls='ls --color -F -a -b'
 
 alias vim='nvim'
 alias vi='nvim'
 
+# WS wolfman
+alias wolfman="~/dev/wolfman/bin/wolfman"
+
 ### Terminal Title
 
-precmd () { echo -ne "\e]1;`print -P %~`\a" }
+# precmd () { echo -ne "\e]1;`print -P %~`\a" }
 
 ### Functions
 
@@ -67,7 +99,20 @@ export PATH="/usr/local/opt/grep/libexec/gnubin:/anaconda/bin:/usr/local/opt/cor
 
 export MANPATH="~/man:/usr/local/man:$MANPATH"
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+# homebrew python
+#if [ -x "$(command -v brew)" ]; then
+#  alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
+#fi
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+source /Users/mmacaulay/.config/wealthsimple/rbenv/config.zsh
+source /Users/mmacaulay/.config/wealthsimple/nvm/config.zsh

@@ -4,6 +4,12 @@
 " Plugs
 " **********************
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
@@ -38,6 +44,18 @@ let mapleader = ","
 
 " use system clipboard
 set clipboard=unnamed
+
+" " Copy to clipboard
+vnoremap  y  +y
+nnoremap  Y  +yg_
+nnoremap  y  +y
+nnoremap  yy +yy
+
+" " Paste from clipboard
+nnoremap p +p
+nnoremap P +P
+vnoremap p +p
+vnoremap P +P
 
 " turn off swap files
 set noswapfile
