@@ -1,12 +1,12 @@
 [user]
 	name = Matt MacAulay
-	email = matt@plaidshirt.ca
+	email = matt@m10y.org
 [color]
   diff = auto
   status = auto
   branch = auto
 [core]
-	excludesfile = /Users/mac/.gitignore
+	excludesfile = ~/.gitignore
   editor = nvim
   autocrlf = input
 [apply]
@@ -24,4 +24,4 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/mac/.stCommitMsg
+	template = ~/.stCommitMsg
