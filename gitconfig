@@ -1,13 +1,13 @@
 [user]
 	name = Matt MacAulay
-	email = matt@m10y.org
+	email = matt@m6y.ca
 [color]
   diff = auto
   status = auto
   branch = auto
 [core]
 	excludesfile = ~/.gitignore
-  editor = nvim
+  editor = vim
   autocrlf = input
 [apply]
   whitespace = nowarn
@@ -17,11 +17,5 @@
 	helper = osxkeychain
 [push]
   default = simple
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [commit]
 	template = ~/.stCommitMsg

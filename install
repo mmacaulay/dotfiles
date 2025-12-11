@@ -1,9 +1,6 @@
 #!/bin/bash
 
-for file in bash vim zshrc gitconfig gitignore inputrc vimrc
+for file in zshrc gitignore inputrc vimrc
 do
   ln -s "$PWD/$file" "$HOME/.$file"
 done
-
-mkdir -p ~/.config
-ln -s ~/.vim ~/.config/nvim
