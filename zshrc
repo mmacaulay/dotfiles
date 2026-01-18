@@ -24,6 +24,9 @@ HISTSIZE=2000
 # Suggest corrections to commands
 # setopt CORRECT
 # setopt CORRECT_ALL
+unsetopt correct_all
+unsetopt correct
+
 
 ### Autocomplete
 autoload -Uz compinit && compinit
@@ -51,3 +54,15 @@ eval "$(pyenv virtualenv-init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
+# Automatically use the version of Node specified in the .nvmrc file
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [ -f .nvmrc ]; then
+    nvm use
+  elif [ $(nvm version) != $(nvm version default) ]; then
+    echo "Reverting to default Node version"
+    nvm use default
+  fi
+}
+export GPG_TTY=$(tty)
