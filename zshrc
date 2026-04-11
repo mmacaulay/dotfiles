@@ -49,6 +49,14 @@ zstyle ':vcs_info:git:*' formats ' %F{magenta}(%b)%f'
 
 PROMPT='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f${vcs_info_msg_0_} %F{yellow}%(!.#.%#)%f '
 
+### Key bindings
+bindkey '\e[1;3D' backward-word                    # Option+Left
+bindkey '\e[1;3C' forward-word                     # Option+Right
+bindkey '\e[A'    history-beginning-search-backward # Up arrow
+bindkey '\e[B'    history-beginning-search-forward  # Down arrow
+# Note: Option+Delete (delete word) requires a terminal-level mapping not supported
+# in iTerm2 by default — use Ctrl+W instead
+
 ### Aliases
 alias ls='ls -FA --color=auto'
 
