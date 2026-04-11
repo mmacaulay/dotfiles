@@ -7,6 +7,12 @@ mise_bin="$HOME/.local/bin/mise"
 
 "$repo_dir/install"
 
+if command -v brew >/dev/null 2>&1; then
+  brew bundle --file="$repo_dir/Brewfile"
+else
+  echo "Homebrew not found — skipping Brewfile install"
+fi
+
 if ! command -v mise >/dev/null 2>&1; then
   if [ ! -x "$mise_bin" ]; then
     curl -fsSL https://mise.run | sh

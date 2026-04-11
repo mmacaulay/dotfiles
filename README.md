@@ -17,6 +17,15 @@ Small personal dotfiles repo for a macOS `zsh` setup.
 
 - macOS
 - `zsh` as the active shell
+- [Homebrew](https://brew.sh) installed
+
+## What's in the Brewfile
+
+`brew bundle` installs these during `bootstrap`:
+
+- `git` — current version, overrides the macOS system git
+- `gh` — GitHub CLI
+- `gpg` — GPG for commit signing and encryption
 
 ## Install
 
@@ -42,7 +51,7 @@ That will create or replace symlinks for:
 - `~/.vimrc`
 - `~/.config/mise/config.toml`
 
-`bootstrap` also installs `mise` if needed, then runs:
+`bootstrap` also runs `brew bundle` (if Homebrew is present), installs `mise` if needed, then runs:
 
 ```sh
 mise trust ~/.config/mise/config.toml
