@@ -1,6 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
-for file in zshrc gitignore inputrc vimrc
+set -eu
+
+repo_dir=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
+
+for file in zshrc zshenv gitignore inputrc vimrc gitconfig
 do
-  ln -s "$PWD/$file" "$HOME/.$file"
+  ln -sfn "$repo_dir/$file" "$HOME/.$file"
 done
