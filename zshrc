@@ -60,7 +60,11 @@ bindkey '\e[B'    history-beginning-search-forward  # Down arrow
 ### Aliases
 alias ls='ls -FA --color=auto'
 
-export GPG_TTY=$(tty)
+if tty -s; then
+  export GPG_TTY="$(tty)"
+fi
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+if [[ -f ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
