@@ -17,5 +17,3 @@
 	helper = osxkeychain
 [push]
   default = simple
-[commit]
-	template = ~/.stCommitMsg

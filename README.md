@@ -46,6 +46,7 @@ That will create or replace symlinks for:
 `bootstrap` also installs `mise` if needed, then runs:
 
 ```sh
+mise trust ~/.config/mise/config.toml
 mise install
 mise reshim
 ```

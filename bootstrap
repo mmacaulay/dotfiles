@@ -3,14 +3,16 @@
 set -eu
 
 repo_dir=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
+mise_bin="$HOME/.local/bin/mise"
 
 "$repo_dir/install"
 
-if ! command -v mise >/dev/null 2>&1 && [ ! -x "$HOME/.local/bin/mise" ]; then
+if ! command -v mise >/dev/null 2>&1 && [ ! -x "$mise_bin" ]; then
   curl https://mise.run | sh
 fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
-mise install
-mise reshim
+"$mise_bin" trust "$repo_dir/.config/mise/config.toml"
+"$mise_bin" install
+"$mise_bin" reshim
