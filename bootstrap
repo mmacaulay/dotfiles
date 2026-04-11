@@ -7,12 +7,17 @@ mise_bin="$HOME/.local/bin/mise"
 
 "$repo_dir/install"
 
-if ! command -v mise >/dev/null 2>&1 && [ ! -x "$mise_bin" ]; then
-  curl https://mise.run | sh
+if ! command -v mise >/dev/null 2>&1; then
+  if [ ! -x "$mise_bin" ]; then
+    curl -fsSL https://mise.run | sh
+  fi
+  mise_cmd="$mise_bin"
+else
+  mise_cmd=$(command -v mise)
 fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
-"$mise_bin" trust "$repo_dir/.config/mise/config.toml"
-"$mise_bin" install
-"$mise_bin" reshim
+"$mise_cmd" trust "$repo_dir/.config/mise/config.toml"
+"$mise_cmd" install
+"$mise_cmd" reshim

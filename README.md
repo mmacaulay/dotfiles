@@ -17,7 +17,6 @@ Small personal dotfiles repo for a macOS `zsh` setup.
 
 - macOS
 - `zsh` as the active shell
-- `mise` installed to `$HOME/.local/bin/mise`
 
 ## Install
 
@@ -49,4 +48,13 @@ That will create or replace symlinks for:
 mise trust ~/.config/mise/config.toml
 mise install
 mise reshim
+```
+
+## Validate
+
+After bootstrap, a quick non-interactive check is:
+
+```sh
+zsh -c 'command -v mise uv python node ruby'
+zsh -c 'python --version; node --version; ruby --version; uv --version'
 ```
