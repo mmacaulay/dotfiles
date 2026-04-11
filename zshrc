@@ -40,39 +40,8 @@ PROMPT='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f %F{ye
 ### Aliases
 alias ls='ls --color -F -a -b -T'
 
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
-export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
-
-pyenv() {
-  unset -f pyenv
-  eval "$(command pyenv init -)"
-  eval "$(command pyenv virtualenv-init -)"
-  pyenv "$@"
-}
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-
-# Automatically use the version of Node specified in the .nvmrc file
-autoload -U add-zsh-hook
-load-nvmrc() {
-  command -v nvm >/dev/null 2>&1 || return
-
-  if [ -f .nvmrc ]; then
-    nvm use
-  elif [ "$(nvm version)" != "$(nvm version default)" ]; then
-    echo "Reverting to default Node version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
 export GPG_TTY=$(tty)
-export PATH="$HOME/.local/bin:$PATH"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 
 # bun completions
 [ -s "/Users/mac/.bun/_bun" ] && source "/Users/mac/.bun/_bun"
