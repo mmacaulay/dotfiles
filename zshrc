@@ -38,7 +38,7 @@ autoload -Uz compinit && compinit
 PROMPT='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f %F{yellow}%(!.#.%#)%f '
 
 ### Aliases
-alias ls='ls --color -F -a -b -T'
+alias ls='ls -FA --color=auto'
 
 export GPG_TTY=$(tty)
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
