@@ -54,6 +54,8 @@ bindkey '\e[1;3D' backward-word                    # Option+Left
 bindkey '\e[1;3C' forward-word                     # Option+Right
 bindkey '\e[A'    history-beginning-search-backward # Up arrow
 bindkey '\e[B'    history-beginning-search-forward  # Down arrow
+# Note: Option+Delete (delete word) requires a terminal-level mapping not supported
+# in iTerm2 by default — use Ctrl+W instead
 
 ### Aliases
 alias ls='ls -FA --color=auto'
