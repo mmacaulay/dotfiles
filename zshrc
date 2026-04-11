@@ -29,16 +29,30 @@ unsetopt correct
 
 
 ### Autocomplete
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+# Only recheck completions once a day
+if [[ -n ${ZDOTDIR:-~}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
 # Load bashcompinit for some old bash completions
 # autoload bashcompinit && bashcompinit
 
 ### Prompt
-PROMPT='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f %F{yellow}%(!.#.%#)%f '
+setopt PROMPT_SUBST
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' %F{magenta}(%b)%f'
+
+PROMPT='%(?.%F{green}😀%f.%F{red}😬 [%?]%f) %F{blue}%m%f %F{cyan}%1~%f${vcs_info_msg_0_} %F{yellow}%(!.#.%#)%f '
 
 ### Aliases
 alias ls='ls -FA --color=auto'
 
 export GPG_TTY=$(tty)
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
