@@ -6,4 +6,4 @@ uv = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "ruby"]
-ruby.compile = false
+ruby.compile = false  # Use prebuilt binaries; remove if install fails on your platform

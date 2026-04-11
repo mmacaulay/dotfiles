@@ -21,3 +21,7 @@ export PATH="$HOME/.local/bin:$PATH"
 "$mise_cmd" trust "$repo_dir/.config/mise/config.toml"
 "$mise_cmd" install
 "$mise_cmd" reshim
+
+echo ""
+echo "Verifying installations..."
+"$mise_cmd" doctor || echo "Note: some warnings above may require a shell restart"
