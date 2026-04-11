@@ -42,10 +42,3 @@ alias ls='ls --color -F -a -b -T'
 
 export GPG_TTY=$(tty)
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
-
-# bun completions
-[ -s "/Users/mac/.bun/_bun" ] && source "/Users/mac/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"

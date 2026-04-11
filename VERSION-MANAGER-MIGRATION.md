@@ -54,9 +54,9 @@ This keeps the machine setup simpler while still preserving the main Python-spec
    Or, without the tracked config yet:
 
    ```sh
-   mise use -g python@3.13
+   mise use -g python@latest
    mise use -g node@lts
-   mise use -g ruby@3.3
+   mise use -g ruby@latest
    mise use -g uv@latest
    ```
 

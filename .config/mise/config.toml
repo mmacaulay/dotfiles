@@ -1,9 +1,8 @@
 [tools]
 node = "lts"
-python = "3.13"
-ruby = "3.3"
+python = "latest"
+ruby = "latest"
 uv = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "ruby"]
-ruby.compile = false

@@ -18,7 +18,6 @@ Small personal dotfiles repo for a macOS `zsh` setup.
 - macOS
 - `zsh` as the active shell
 - `mise` installed to `$HOME/.local/bin/mise`
-- `bun` installed at `$HOME/.bun`
 
 ## Install
 
