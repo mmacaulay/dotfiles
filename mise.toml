@@ -1,0 +1,11 @@
+[tasks.install]
+description = "Symlink dotfiles into ~"
+run = "./install"
+
+[tasks.bootstrap]
+description = "Full machine setup (install + mise + brew)"
+run = "./bootstrap"
+
+[tasks.update]
+description = "Upgrade all mise tools and Homebrew packages"
+run = "mise upgrade && brew upgrade"

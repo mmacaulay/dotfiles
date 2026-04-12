@@ -4,6 +4,7 @@ python = "latest"
 ruby = "latest"
 uv = "latest"
 bun = "latest"
+gh = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python", "ruby"]
