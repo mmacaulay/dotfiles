@@ -12,6 +12,7 @@ Small personal dotfiles repo for a macOS `zsh` setup.
 - `vimrc`: lightweight Vim config
 - `inputrc`: readline settings
 - `install`: symlinks the tracked files into `$HOME`
+- `bootstrap`: installs and configures `mise` and installs Homebrew dependencies via `brew bundle`
 
 ## Assumptions
 
